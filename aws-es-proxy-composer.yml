@@ -1,0 +1,71 @@
+version: '3'
+services:
+  dev_container:
+    image: abutaha/aws-es-proxy:v1.0
+    command: -endpoint <es-endepoint> -listen 0.0.0.0:9200
+    volumes:
+      - ~/.aws:/root/.aws
+    ports:
+      - "9200:9200"
+    container_name: aws_es_proxy_dev
+    restart: always
+
+  dmo_container:
+    image: abutaha/aws-es-proxy:v1.0
+    command: -endpoint <es-endepoint> -listen 0.0.0.0:9200
+    volumes:
+      - ~/.aws:/root/.aws
+    ports:
+      - "9201:9200"
+    container_name: aws_es_proxy_dmo
+    restart: always
+
+  fix_container:
+    image: abutaha/aws-es-proxy:v1.0
+    command: -endpoint <es-endepoint> -listen 0.0.0.0:9200
+    volumes:
+      - ~/.aws:/root/.aws
+    ports:
+      - "9202:9200"
+    container_name: aws_es_proxy_fix
+    restart: always
+
+  hom_container:
+    image: abutaha/aws-es-proxy:v1.0
+    command: -endpoint <es-endepoint> -listen 0.0.0.0:9200
+    volumes:
+      - ~/.aws:/root/.aws
+    ports:
+      - "9203:9200"
+    container_name: aws_es_proxy_hom
+    restart: always
+
+  imp_container:
+    image: abutaha/aws-es-proxy:v1.0
+    command: -endpoint <es-endepoint> -listen 0.0.0.0:9200
+    volumes:
+      - ~/.aws:/root/.aws
+    ports:
+      - "9204:9200"
+    container_name: aws_es_proxy_imp
+    restart: always
+
+  stg_container:
+    image: abutaha/aws-es-proxy:v1.0
+    command: -endpoint <es-endepoint> -listen 0.0.0.0:9200
+    volumes:
+      - ~/.aws:/root/.aws
+    ports:
+      - "9205:9200"
+    container_name: aws_es_proxy_stg
+    restart: always
+
+  tst_container:
+    image: abutaha/aws-es-proxy:v1.0
+    command: -endpoint <es-endepoint> -listen 0.0.0.0:9200
+    volumes:
+      - ~/.aws:/root/.aws
+    ports:
+      - "9206:9200"
+    container_name: aws_es_proxy_tst
+    restart: always
